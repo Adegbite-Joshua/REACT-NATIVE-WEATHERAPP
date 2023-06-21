@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
-export default function UpcomingWeather () {
+export default function CurreentWeather () {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
