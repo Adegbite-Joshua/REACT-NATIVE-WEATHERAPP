@@ -1,11 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
+import {Feather} from '@expo/vector-icons'
 
-export default function CurreentWeather () {
+
+const CurreentWeather = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
       <View style={styles.container}>
-        <Text>Current Weather</Text>
+        <Feather name='sun' size={100} color='black'/>
+        {/* <Text>Current Weather</Text> */}
         <Text style={styles.temp}>6</Text>
         <Text style={styles.feels}>Feels like 6</Text>
         <View style={styles.highLowWrapper}>
@@ -13,23 +17,26 @@ export default function CurreentWeather () {
           <Text style={styles.highLow}>Low: 6</Text>
         </View>
         <View style={styles.bodyWrapper}>
-          <Text style={styles.description}>High: 8</Text>
-          <Text style={styles.message}>Low: 6</Text>
+          <Text style={styles.description}>Its sunny</Text>
+          <Text style={styles.message}>Its perfect t-shirt weather</Text>  
         </View>
       </View>
+
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
     wrapper: {
-      flex: 1
+      // flex: 1,
+      backgroundColor: 'red',
+      marginTop: StatusBar.currentHeight
     },
     container: {
-      flex: 1,
-      backgroundColor: 'red',
-      alignItems: 'center',
-      justifyContent: 'center '
+      // flex: 1,
+      alignItems: 'center'
+      // justifyContent: 'end'
+      // justifyContent: 'center '
     },
     temp: {
       color: 'black',
@@ -58,3 +65,6 @@ const styles = StyleSheet.create({
     }
 });
   
+
+
+export default CurreentWeather

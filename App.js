@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import CurreentWeather from '.src/CurreentWeather'
+import CurrentWeather from './src/CurrentWeather'
+import UpcomingWeather from './src/UpcomingWeather';
 
 
-export default function App() {
+
+const App = () => {
   return (
-    <SafeAreaView style={styles.wrapper}>
-      <CurreentWeather />
-    </SafeAreaView>
+    <View>
+      <CurrentWeather />
+      {/* <Text>yftfdcjkhjkrhjhjhejfhjhthfd</Text> */}
+    </View>
   );
 }
+
+export default App
