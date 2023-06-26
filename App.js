@@ -1,14 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
+// import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
-import CurrentWeather from './src/CurrentWeather'
-import UpcomingWeather from './src/UpcomingWeather';
+import City from './src/Screens/City';
+import CurrentWeather from './src/Screens/CurrentWeather'
+import UpcomingWeather from './src/Screens/UpcomingWeather';
+
 
 
 
 const App = () => {
   return (
     <View>
-      <UpcomingWeather />
+      {/* <Text>ewklkmjkjcgfcgfcffdxfdxdxcxcxcxr</Text> */}
+      <City />
       {/* <Text>yftfdcjkhjkrhjhjhejfhjhthfd</Text> */}
     </View>
   );

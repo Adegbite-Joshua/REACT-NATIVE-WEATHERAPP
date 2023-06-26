@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 import {Feather} from '@expo/vector-icons'
-
+// import style from './Style.module.css'
 
 const CurreentWeather = () => {
   return (
