@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 import {Feather} from '@expo/vector-icons'
+import RowText from '../Components/RowText';
 // import style from './Style.module.css'
 
 const CurreentWeather = () => {
@@ -12,14 +13,18 @@ const CurreentWeather = () => {
         {/* <Text>Current Weather</Text> */}
         <Text style={styles.temp}>6</Text>
         <Text style={styles.feels}>Feels like 6</Text>
-        <View style={styles.highLowWrapper}>
-          <Text style={styles.highLow}>High: 8</Text>
-          <Text style={styles.highLow}>Low: 6</Text>
-        </View>
-        <View style={styles.bodyWrapper}>
-          <Text style={styles.description}>Its sunny</Text>
-          <Text style={styles.message}>Its perfect t-shirt weather</Text>  
-        </View>
+        <RowText
+         messageOne={'High: 8'}
+         messageTwo={'Low: 6'}
+         containerStyle={styles.highLowWrapper}
+         messageOneStyle={styles.highLow}
+         messageTwoStyle={styles.highLow} />
+        <RowText
+         messageOne={'Its sunny'}
+         messageTwo={'Its perfect t-shirt weather'} 
+         containerStyle={styles.bodyWrapper}
+         messageOneStyle={styles.description}
+         messageTwoStyle={styles.message} />
       </View>
 
     </SafeAreaView>
