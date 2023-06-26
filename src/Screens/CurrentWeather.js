@@ -3,7 +3,9 @@ import React from 'react';
 import { StyleSheet, Text, View, SafeAreaView, StatusBar } from 'react-native';
 import {Feather} from '@expo/vector-icons'
 import RowText from '../Components/RowText';
+import { WeatherType } from '../Utilities/WeatherType';
 // import style from './Style.module.css'
+
 
 const CurreentWeather = () => {
   return (
