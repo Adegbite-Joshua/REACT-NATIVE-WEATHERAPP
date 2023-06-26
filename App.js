@@ -8,7 +8,7 @@ import UpcomingWeather from './src/UpcomingWeather';
 const App = () => {
   return (
     <View>
-      <CurrentWeather />
+      <UpcomingWeather />
       {/* <Text>yftfdcjkhjkrhjhjhejfhjhthfd</Text> */}
     </View>
   );

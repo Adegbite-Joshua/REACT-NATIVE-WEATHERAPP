@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     wrapper: {
       // flex: 1,
       backgroundColor: 'red',
-      marginTop: StatusBar.currentHeight
+      marginTop: StatusBar.currentHeight || 0
     },
     container: {
       // flex: 1,
