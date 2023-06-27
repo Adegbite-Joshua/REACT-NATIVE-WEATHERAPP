@@ -11,7 +11,7 @@ import useGetWeather from "./hooks/useGetWeather";
 
 const App = () => {
   const [loading, error, weather] = useGetWeather()
-  console.log(loading, error, weather);
+  // console.log(loading, error, weather);
   // if (weather) {
   //   console.log(weather);
   // }

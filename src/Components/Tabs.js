@@ -9,6 +9,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 const Tab = createBottomTabNavigator();
 const Tabs = ({weather}) => {
+  console.log(weather.list);
   return (
     <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: 'tomato',
@@ -25,9 +26,11 @@ const Tabs = ({weather}) => {
             color: 'tomato'
         }
       }}>
-        <Tab.Screen name='Current Weather' component={CurrentWeather} options={{
+        <Tab.Screen name='Current Weather' options={{
           tabBarIcon: ({focused})=> <Feather name='droplet' size={25} color={focused? 'tomato': 'black'} />
-        }} />
+        }} >
+          {()=> <CurrentWeather/>}
+        </Tab.Screen>
         <Tab.Screen name='Upcoming Weather' component={UpcomingWeather} options={{
           tabBarIcon: ({focused})=> <Feather name='clock' size={25} color={focused? 'tomato': 'black'} />
         }} />

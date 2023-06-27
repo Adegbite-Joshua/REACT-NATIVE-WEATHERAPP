@@ -8,18 +8,18 @@ const useGetWeather = () => {
     const [weather, setweather] = useState(null)
     const [lat, setlat] = useState([])
     const [lon, setlon] = useState([])
-    console.log('iskhjgfgf');
+    // console.log('iskhjgfgf');
 
 
     const fetchWeatherData = async () => {
         // console.log('fettttttttttttt');
         try {
             const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}`)
-            console.log(res);
+            // console.log(res);
             const data = await res.json()
             setweather(data)
         } catch (e) {
-            console.log(e);
+            // console.log(e);
             seterror('Could not fetch weather data')
         } finally {
             setloading(false)
