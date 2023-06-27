@@ -9,10 +9,24 @@ import { WEATHER_API_KEY } from "@env";
 
 const App = () => {
   const [loading, setloading] = useState(true)
-  const [location, setlocation] = useState(null)
   const [error, seterror] = useState(null)
-//api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-  useEffect(() => {
+  const [weather, setweather] = useState(null)
+  const [lat, setlat] = useState([])
+  const [lon, setlon] = useState([])
+
+//
+const fetchWeatherData = async()=>{
+  try {
+    const res = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${location.coords.latitude}&lon=${location.coords.longitude}&appid=${WEATHER_API_KEY}`)
+    const data = await res.json()
+    setweather(data)
+  } catch (error) {
+    seterror('Could not fetch weather data')
+  } finally {
+    setloading(false)
+  }
+}
+  useEffect( async() => {
     ;(async()=>{
       let {status} = await Location.requestForegroundPermissionsAsync();
       if (status !== 'granted') {
@@ -20,13 +34,14 @@ const App = () => {
         return
       }
       let location = await Location.getCurrentPositionAsync({})
-      setlocation(location)
-      console.log(location);
+      setlat(location.coords.latitude)
+      setlon(location.coords.longitude)
     })()
-  }, [])
+    await fetchWeatherData()
+  }, [lat, lon])
 
-  if (location) {
-    console.log(location);
+  if (weather) {
+    console.log(weather);
   }
 
   if (loading) {
