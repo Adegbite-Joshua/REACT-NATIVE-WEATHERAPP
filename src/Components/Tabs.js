@@ -8,7 +8,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 
 const Tab = createBottomTabNavigator();
-const Tabs = () => {
+const Tabs = ({weather}) => {
   return (
     <Tab.Navigator screenOptions={{
         tabBarActiveTintColor: 'tomato',
