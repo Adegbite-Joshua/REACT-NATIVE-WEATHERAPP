@@ -6,32 +6,32 @@ import { View, ActivityIndicator, StyleSheet, SafeAreaView, StatusBar, Text } fr
 import * as Location from 'expo-location'
 import { WEATHER_API_KEY } from "@env";
 import useGetWeather from "./hooks/useGetWeather";
+import ErrorItem from "./src/Components/ErrorItem";
 
 
 
 const App = () => {
   const [loading, error, weather] = useGetWeather()
   // console.log(loading, error, weather);
-  // if (weather) {
-  //   console.log(weather);
-  // }
+  if (weather && weather.list) {
+    return (
+      <NavigationContainer>
+        <Tabs weather={weather}/>
+      </NavigationContainer>
+    );  }
 
-  if (loading) {
-    return(
-      <SafeAreaView style={{marginTop: StatusBar.currentHeight || 0}}>
-        <View style={styles.conainer}>
-          <ActivityIndicator size={'large'} color='blue' />
-          {/* <Text>{location.coords.longitude}</Text> */}
-        </View>
-      </SafeAreaView>
-    )
-  }
-  
   return (
-    <NavigationContainer>
-      <Tabs weather={weather}/>
-    </NavigationContainer>
-  );
+    <View style={styles.conainer}>
+      {loading ? (
+        <SafeAreaView style={{ marginTop: StatusBar.currentHeight || 0 }}>
+
+          <ActivityIndicator size={'large'} color='blue' />
+
+        </SafeAreaView>
+      ) : (<ErrorItem />)}
+    </View>
+  )
+  
 }
 
 const styles = StyleSheet.create({
