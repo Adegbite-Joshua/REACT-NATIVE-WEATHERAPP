@@ -2,24 +2,25 @@ import React from 'react'
 import { StyleSheet, Text, View, SafeAreaView, StatusBar, ImageBackground } from 'react-native';
 import {Feather} from '@expo/vector-icons'
 import IconText from '../Components/IconText';
+import moment from 'moment'
 
 
-const City = () => {
+const City = ({name, country, population, sunrise, sunset}) => {
   return (
     <SafeAreaView style={styles.container}>
         <ImageBackground 
             source={require('../../assets/contact.png')}
         >
-            <Text style={[styles.cityName, styles.cityText]}>London</Text>
-            <Text style={[styles.countryName, styles.cityText]}>UK</Text>
+            <Text style={[styles.cityName, styles.cityText]}>{name}</Text>
+            <Text style={[styles.countryName, styles.cityText]}>{country}</Text>
             <View style={[styles.populationWrapper, styles.rowLayout]}>
                 {/* <Feather name='user' size={50} color='red'/>
                 <Text style={styles.populationText}>8000</Text> */}
-                <IconText iconName='user' iconColor='red' bodyText='80000' bodyTextStyles={styles.populationText} />
+                <IconText iconName='user' iconColor='red' bodyText={`Population: ${population}`} bodyTextStyles={styles.populationText} />
             </View>
             <View style={[styles.riseSetWrapper, styles.rowLayout]}>
-                <IconText iconName='sunrise' iconColor='white' bodyText='778675656' bodyTextStyles={styles.riseSetText} />
-                <IconText iconName='sunrise' iconColor='white' bodyText='778675656' bodyTextStyles={styles.riseSetText} />
+                <IconText iconName='sunrise' iconColor='white' bodyText={`${moment(sunrise).format('h:mm:ss a')}`} bodyTextStyles={styles.riseSetText} />
+                <IconText iconName='sunrise' iconColor='white' bodyText={`${moment(sunset).format('h:mm:ss a')}`} bodyTextStyles={styles.riseSetText} />
             </View>
         </ImageBackground>
     </SafeAreaView>

@@ -42,7 +42,7 @@ const DATA = [
   }
 ]
 
-const UpcomingWeather =()=>{
+const UpcomingWeather =({weatherData})=>{
   const renderItem =({item})=>(<ListItem condition={item.weather[0].main} dt_txt={item.dt_txt} min={item.main.temp_min} max={item.main.temp_max} />)
   return (
     <SafeAreaView style={styles.container}>
@@ -55,7 +55,7 @@ const UpcomingWeather =()=>{
         </View>
         <View>
           <FlatList
-            data={DATA}
+            data={weatherData}
             renderItem={renderItem}
           />
         </View>

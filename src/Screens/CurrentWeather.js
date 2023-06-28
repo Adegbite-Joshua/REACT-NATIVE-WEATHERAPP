@@ -7,23 +7,26 @@ import { WeatherType } from '../Utilities/WeatherType';
 // import style from './Style.module.css'
 
 
-const CurreentWeather = () => {
+const CurreentWeather = ({weatherData}) => {
+  const {main: {temp, feels_like, temp_max, temp_min}, weather} = weatherData
+  const weatherCondition = weather[0].main
+  console.log(WeatherType[weatherCondition]);
   return (
-    <SafeAreaView style={styles.wrapper}>
+    <SafeAreaView style={[styles.wrapper, { backgroundColor: WeatherType[weatherCondition].backgroundColor}]}>
       <View style={styles.container}>
-        <Feather name='sun' size={100} color='black'/>
+        <Feather name={WeatherType[weatherCondition].icon} size={100} color='black'/>
         {/* <Text>Current Weather</Text> */}
-        <Text style={styles.temp}>6</Text>
-        <Text style={styles.feels}>Feels like 6</Text>
+        <Text style={styles.temp}>{temp}</Text>
+        <Text style={styles.feels}>{`Feels like ${feels_like}`}</Text>
         <RowText
-         messageOne={'High: 8'}
-         messageTwo={'Low: 6'}
+         messageOne={`High: ${temp_max}`}
+         messageTwo={`Low: ${temp_min}`}
          containerStyle={styles.highLowWrapper}
          messageOneStyle={styles.highLow}
          messageTwoStyle={styles.highLow} />
         <RowText
-         messageOne={'Its sunny'}
-         messageTwo={'Its perfect t-shirt weather'} 
+         messageOne={weather[0].description}
+         messageTwo={WeatherType[weatherCondition].messageBody} 
          containerStyle={styles.bodyWrapper}
          messageOneStyle={styles.description}
          messageTwoStyle={styles.message} />
