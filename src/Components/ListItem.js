@@ -9,13 +9,13 @@ const ListItem = ({dt_txt, min, max, condition}) => {
     // const  = props
     return(
       <View style={styles.item}>
-        <Feather name={WeatherType[condition].icon} size={50} color='white' />
-        <View>
+        <Feather name={WeatherType[condition].icon} size={40} color='white' />
+        <View style={styles.dateTextWrapper} >
           <Text style={styles.date}>{moment(dt_txt).format('dddd')}</Text>
           <Text style={styles.date}>{moment(dt_txt).format('h:mm:ss a ')}</Text>
         </View>
         <Text style={styles.date}>{dt_txt}</Text>
-        <Text style={styles.temp}>{`${Math.round(min)}° /${Math.round(max)}°`}</Text>
+        <Text style={styles.temp}>{`${Math.round(min)}°/${Math.round(max)}°`}</Text>
         {/* <Text style={styles.temp}>{max}</Text> */}
       </View>
     )
@@ -30,15 +30,18 @@ const styles = StyleSheet.create({
       justifyContent: 'space-around',
       alignItems: 'center',
       borderWidth: 5,
-      backgroundColor: 'pink'
+      backgroundColor: 'indianred'
     },
     temp: {
       color: 'white',
-      fontSize: 20
+      fontSize: 16
     },
     date: {
       color: 'white',
-      fontSize: 15
+      fontSize: 12
+    },
+    dateTextWrapper: {
+      flexDirection: 'column',
     }
   })
   

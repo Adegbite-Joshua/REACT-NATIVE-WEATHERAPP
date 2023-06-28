@@ -40,7 +40,7 @@ const useGetWeather = () => {
         // })()
     }, [lat, lon])
 
-    return [loading, true, []]
+    return [loading, error, weather]
 }
 
 export default useGetWeather
