@@ -38,9 +38,10 @@ const CurreentWeather = ({weatherData}) => {
 
 const styles = StyleSheet.create({
     wrapper: {
-      // flex: 1,
+      flex: 1,
+      justifyContent: 'center',
       // backgroundColor: 'red',
-      marginTop: StatusBar.currentHeight || 0
+      // marginTop: StatusBar.currentHeight || 0
     },
     container: {
       // flex: 1,
@@ -49,18 +50,18 @@ const styles = StyleSheet.create({
       // justifyContent: 'center '
     },
     temp: {
-      color: 'black',
+      color: 'white',
       fontSize: 48
     },
     feels: {
-      color: 'black',
+      color: 'white',
       fontSize: 30
     },
     highLowWrapper: {
       flexDirection: 'row'
     },
     highLow: {
-      color: 'black',
+      color: 'white',
       fontSize: 20
     },
     bodyWrapper: {
@@ -68,10 +69,12 @@ const styles = StyleSheet.create({
       alignItems: 'flex-start'
     },
     description: {
-      fontSize: 43
+      fontSize: 43,
+      color: 'white'
     },
     message: {
-      fontSize: 25
+      fontSize: 25,
+      color: 'white'
     }
 });
   

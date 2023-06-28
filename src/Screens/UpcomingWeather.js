@@ -47,12 +47,9 @@ const UpcomingWeather =({weatherData})=>{
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={require('../../assets/contact.png')}
+        source={require('../../assets/cloud.jpg')}
         style={styles.image}
       >
-        <View>
-          <Text>Upcoming Weather</Text>
-        </View>
         <View>
           <FlatList
             data={weatherData}
@@ -67,9 +64,9 @@ const UpcomingWeather =({weatherData})=>{
 const styles = StyleSheet.create({
   container: {
     // flexGrow: 1,
-    // flex: 1,
+    flex: 1,
     backgroundColor: 'royalblue',
-    marginTop: StatusBar.currentHeight || 0
+    // marginTop: StatusBar.currentHeight || 0
   },
   item: {
     padding: 20,

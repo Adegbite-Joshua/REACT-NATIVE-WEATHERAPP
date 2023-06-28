@@ -9,13 +9,12 @@ const City = ({name, country, population, sunrise, sunset}) => {
   return (
     <SafeAreaView style={styles.container}>
         <ImageBackground 
-            source={require('../../assets/contact.png')}
+            source={require('../../assets/city.jpg')}
+            style={{flex: 1}}
         >
             <Text style={[styles.cityName, styles.cityText]}>{name}</Text>
             <Text style={[styles.countryName, styles.cityText]}>{country}</Text>
             <View style={[styles.populationWrapper, styles.rowLayout]}>
-                {/* <Feather name='user' size={50} color='red'/>
-                <Text style={styles.populationText}>8000</Text> */}
                 <IconText iconName='user' iconColor='red' bodyText={`Population: ${population}`} bodyTextStyles={styles.populationText} />
             </View>
             <View style={[styles.riseSetWrapper, styles.rowLayout]}>
@@ -30,9 +29,10 @@ const City = ({name, country, population, sunrise, sunset}) => {
 const styles = StyleSheet.create({
     container: {
         // flexGrow: 1,
-        // flex: 1,
+        flex: 1,
         backgroundColor: 'royalblue',
-        marginTop: StatusBar.currentHeight || 0
+        justifyContent: 'center'
+        // marginTop: StatusBar.currentHeight || 0
     },
     cityName: {
         alignSelf: 'center',

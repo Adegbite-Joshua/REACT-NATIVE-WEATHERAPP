@@ -12,7 +12,6 @@ import ErrorItem from "./src/Components/ErrorItem";
 
 const App = () => {
   const [loading, error, weather] = useGetWeather()
-  // console.log(loading, error, weather);
   if (weather && weather.list && !loading) {
     return (
       <NavigationContainer>
@@ -25,9 +24,7 @@ const App = () => {
       {error ? (
         <ErrorItem />
       ) : (<SafeAreaView style={{ marginTop: StatusBar.currentHeight || 0 }}>
-
           <ActivityIndicator size={'large'} color='blue' />
-
         </SafeAreaView>)}
     </View>
   )
@@ -36,8 +33,8 @@ const App = () => {
 
 const styles = StyleSheet.create({
   conainer: {
-    // justifyContent: 'center',
-    // flex: 1,
+    justifyContent: 'center',
+    flex: 1,
     // flexDirection: 'column'
   }
 })
